@@ -11,7 +11,12 @@
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
-  <depend>serial_driver</depend>
+  <depend>serial</depend>
+  <depend>rclcpp</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>tf2</depend>
+  <depend>rcl_interfaces</depend>
   <export>
     <build_type>ament_cmake</build_type>
   </export>

@@ -17,12 +17,30 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(serial_driver REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(serial REQUIRED)
+find_package(Eigen3 REQUIRED)
+set(Eigen3_INCLUDE_DIRS ${EIGEN3_INCLUDE_DIR})
+find_package(tf2 REQUIRED)
+find_package(rcl_interfaces REQUIRED)
+
+
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
 add_executable(imu_node src/imu_node.cpp)
+ament_target_dependencies(imu_node
+  rclcpp
+  sensor_msgs
+  std_msgs
+  serial
+  Eigen3
+  tf2
+  rcl_interfaces
+)
 target_include_directories(imu_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
