@@ -1,6 +1,6 @@
 # ros2_wheeltec_n100_imu
 
-ROS2 driver pkg for wheeltec N100 IMU module.
+ROS2 driver pkg for WHEELTEC N100 IMU module.
 
 ![alt wheeltec N100](https://i.ebayimg.com/images/g/2EsAAOSw7WVhk2Vr/s-l1600.jpg)
 
