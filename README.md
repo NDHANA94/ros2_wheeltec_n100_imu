@@ -12,7 +12,7 @@ topics:
 ```
 mkdir -p /ros2_ws/src
 cd /ros2_ws/src
-git clone git@github.com:RoverRobotics-forks/serial-ros2.git #install ros2_serail
+git clone git@github.com:RoverRobotics-forks/serial-ros2.git #install ros2_serial
 git clone git@github.com:NDHANA94/ros2_wheeltec_n100_imu.git
 cd ~/ros2_ws
 colcon build
@@ -33,7 +33,7 @@ ros2 run wheeltec_n100_imu imu_node
 ros2 run wheeltec_n100_imu imu_node --ros-args -p serial_port:="/dev/ttyACM0" -p serial_baud:=921600
 ```
 
-| parmeter | data type | default value |
+| parameter | data type | default value |
 | --- | --- | --- |
 | debug | bool | false |
 |serial_port | string |  "/dev/ttyACM0" |
