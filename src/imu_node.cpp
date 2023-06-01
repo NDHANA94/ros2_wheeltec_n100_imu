@@ -1,13 +1,7 @@
 #include "wheeltec_n100_imu/imu_node.hpp"
 #include "crc_table.cpp"
 
-// #include <serial>
 
-
-// ImuNode::ImuNode() :frist_sn_(false), serial_timeout_(20), mag_offset_x_(0), mag_offset_y_(0), mag_offset_z_(0), mag_covariance_(0)
-// {
-  
-// }
 
 
 class ImuNode : public rclcpp::Node
