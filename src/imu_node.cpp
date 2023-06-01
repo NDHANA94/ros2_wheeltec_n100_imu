@@ -224,7 +224,7 @@ private:
         RCLCPP_WARN_STREAM_SKIPFIRST(this->get_logger(), "head_len error (insgps)");
         continue;
       }
-      else if (head_type[0] == TYPE_GROUND || head_type[0] == 0x50) // 未知数据，防止记录失败
+      else if (head_type[0] == TYPE_GROUND || head_type[0] == 0x50) // Unknown data, prevent record failure
       {
         uint8_t ground_sn[1];
         size_t ground_sn_s = serial_.read(ground_sn, 1);
@@ -444,7 +444,7 @@ private:
             Eigen::AngleAxisd( PI/2.0, Eigen::Vector3d::UnitZ()) *
             Eigen::AngleAxisd(    0.0, Eigen::Vector3d::UnitY()) *
             Eigen::AngleAxisd(     PI, Eigen::Vector3d::UnitX());
-        if (device_type_ == 0) //未经变换的原始数据
+        if (device_type_ == 0) //untransformed raw data
         {
           imu_data.orientation.w = ahrs_frame_.frame.data.data_pack.Qw;
           imu_data.orientation.x = ahrs_frame_.frame.data.data_pack.Qx;
@@ -457,7 +457,7 @@ private:
           imu_data.linear_acceleration.y = imu_frame_.frame.data.data_pack.accelerometer_y;
           imu_data.linear_acceleration.z = imu_frame_.frame.data.data_pack.accelerometer_z;
         }
-        else if (device_type_ == 1) //imu单品ROS标准下的坐标变换
+        else if (device_type_ == 1) // Coordinate transformation under ROS standard of imu single product
         {
           Eigen::Quaterniond q_out =  q_z * q_rr * q_ahrs;
           imu_data.orientation.w = q_out.w();
@@ -507,14 +507,14 @@ private:
                                 imu_data.orientation.z);
         geometry_msgs::msg::Pose2D pose_2d;
         double magx, magy, magz, roll, pitch;
-        if (device_type_ == 0){ //未经变换的原始数据//
+        if (device_type_ == 0){ //untransformed raw data//
           magx  = imu_frame_.frame.data.data_pack.magnetometer_x;
           magy  = imu_frame_.frame.data.data_pack.magnetometer_y;
           magz  = imu_frame_.frame.data.data_pack.magnetometer_z;
           roll  = ahrs_frame_.frame.data.data_pack.Roll;
           pitch = ahrs_frame_.frame.data.data_pack.Pitch;
         }
-        else if (device_type_ == 1){ //小车以及imu单品ROS标准下的坐标变换//
+        else if (device_type_ == 1){ //Coordinate transformation of car and imu single product ROS standard//
           magx  = imu_frame_.frame.data.data_pack.magnetometer_x;
           magy  = imu_frame_.frame.data.data_pack.magnetometer_y;
           magz  = imu_frame_.frame.data.data_pack.magnetometer_z;
