@@ -2,6 +2,11 @@
 
 ROS2 driver pkg for wheeltec N100 IMU module.
 
+topics:
+- /imu
+- /imu_trueEast
+- /magnetic_field
+- /magnetic_pose_2d
 
 ### install
 ```
