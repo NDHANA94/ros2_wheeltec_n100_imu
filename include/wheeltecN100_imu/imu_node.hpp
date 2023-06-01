@@ -14,9 +14,13 @@
 
 #include "serial/serial.h"
 #include "tf2/transform_datatypes.h"
+ #include <tf2/LinearMath/Quaternion.h>
 #include <Eigen/Eigen>
 
-#include "wheeltecN100_imu/crc_table.h"
+
+#include "wheeltecN100_imu/fdilink_data_struct.h"
+
+
 // #include <rcl_interfaces>
 
 using namespace std::chrono_literals;
@@ -37,4 +41,6 @@ using namespace std::chrono_literals;
 #define IMU_MAG_COV {0.01, 0.01, 0.01}
 #define IMU_GYRO_COV {0.01, 0.01, 0.01}
 #define IMU_ACCEL_COV {0.05, 0.05, 0.05}
+
+
 

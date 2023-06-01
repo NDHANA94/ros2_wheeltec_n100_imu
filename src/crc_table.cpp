@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include "wheeltecN100_imu/crc_table.h"
+// #include "wheeltecN100_imu/crc_table.h"
 
 static const uint8_t CRC8Table[] = {
     0, 94, 188, 226, 97, 63, 221, 131, 194, 156, 126, 32, 163, 253, 31, 65,
