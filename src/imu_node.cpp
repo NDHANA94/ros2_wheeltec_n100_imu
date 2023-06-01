@@ -64,7 +64,27 @@ public:
 
     q_rot.setRPY(0, 0, yaw_offset_);
 
-    std::vector<rclcpp::Parameter> all_new_parameters{rclcpp::Parameter("serial_port", "/dev/ttyACM0"), rclcpp::Parameter("serial_baud", 921600)};
+    std::vector<rclcpp::Parameter> all_new_parameters{ \
+      rclcpp::Parameter("debug", false), \
+      rclcpp::Parameter("serial_port", "/dev/ttyACM0"), \
+      rclcpp::Parameter("serial_baud", 921600), \
+      rclcpp::Parameter("serial_timeout", 20), \
+      rclcpp::Parameter("device_type", 1), \
+      rclcpp::Parameter("frist_sn", false), \
+      rclcpp::Parameter("imu_topic", "imu"), \
+      rclcpp::Parameter("imu_frame", "imu"), \
+      rclcpp::Parameter("mag_pose_2d_topic", "magnetic_pose_2d"), \
+      rclcpp::Parameter("imu_trueEast_topic", "imu_trueEast"), \
+      rclcpp::Parameter("mag_topic", "magnetic_field"), \
+      rclcpp::Parameter("yaw_offset", -2.094), \
+      rclcpp::Parameter("mag_offset_x", 0.0), \
+      rclcpp::Parameter("mag_offset_y", 0.0), \
+      rclcpp::Parameter("mag_offset_z", 0.0), \
+      // rclcpp::Parameter("imu_mag_covVec"), \
+      // rclcpp::Parameter(), \
+      // rclcpp::Parameter(), \
+      // rclcpp::Parameter(), 
+      };
 
     
    
