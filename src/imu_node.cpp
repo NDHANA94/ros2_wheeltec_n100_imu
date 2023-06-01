@@ -1,4 +1,4 @@
-#include "wheeltecN100_imu/imu_node.hpp"
+#include "wheeltec_n100_imu/imu_node.hpp"
 #include "crc_table.cpp"
 
 // #include <serial>

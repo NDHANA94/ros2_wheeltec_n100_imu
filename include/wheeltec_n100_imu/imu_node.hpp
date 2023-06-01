@@ -18,7 +18,7 @@
 #include <Eigen/Eigen>
 
 
-#include "wheeltecN100_imu/fdilink_data_struct.h"
+#include "wheeltec_n100_imu/fdilink_data_struct.h"
 
 
 // #include <rcl_interfaces>
