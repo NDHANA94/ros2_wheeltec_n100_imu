@@ -2,6 +2,8 @@
 
 ROS2 driver pkg for wheeltec N100 IMU module.
 
+![alt wheeltec N100](https://i.ebayimg.com/images/g/2EsAAOSw7WVhk2Vr/s-l1600.jpg)
+
 topics:
 - /imu
 - /imu_trueEast
