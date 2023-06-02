@@ -1,3 +1,7 @@
+// --------------------------------------------------
+// created by: nipun.dhananjaya@gmail.com 31/05/2023
+// ---------------------------------------------------
+
 #include "wheeltec_n100_imu/imu_node.hpp"
 #include "crc_table.cpp"
 
