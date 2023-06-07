@@ -72,10 +72,9 @@ public:
       rclcpp::Parameter("mag_offset_x", 0.0), \
       rclcpp::Parameter("mag_offset_y", 0.0), \
       rclcpp::Parameter("mag_offset_z", 0.0), \
-      // rclcpp::Parameter("imu_mag_covVec"), \
-      // rclcpp::Parameter(), \
-      // rclcpp::Parameter(), \
-      // rclcpp::Parameter(), 
+      this->declare_parameter("imu_mag_covVec",std::vector<double>(IMU_MAG_COV));
+      this->declare_parameter("imu_gyro_covVec", std::vector<double>(IMU_GYRO_COV));
+      this->declare_parameter("imu_accel_covVec", std::vector<double>(IMU_ACCEL_COV));
       };
 
     
