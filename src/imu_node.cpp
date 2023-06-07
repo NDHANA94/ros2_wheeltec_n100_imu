@@ -30,12 +30,9 @@ public:
     this->declare_parameter("mag_offset_x", 0.0);
     this->declare_parameter("mag_offset_y", 0.0);
     this->declare_parameter("mag_offset_z", 0.0);
-    this->declare_parameter("imu_mag_covVec");
-    rclcpp::Parameter imu_mag_cov_param("imu_mag_covVec", std::vector<double>(IMU_MAG_COV));
-    this->declare_parameter("imu_gyro_covVec");
-    rclcpp::Parameter imu_gyro_cov_param("imu_gyro_covVec", std::vector<double>(IMU_GYRO_COV));
-    this->declare_parameter("imu_accel_covVec");
-    rclcpp::Parameter imu_accel_cov_param("imu_accel_covVec", std::vector<double>(IMU_ACCEL_COV));
+    this->declare_parameter("imu_mag_covVec",std::vector<double>(IMU_MAG_COV));
+    this->declare_parameter("imu_gyro_covVec", std::vector<double>(IMU_GYRO_COV));
+    this->declare_parameter("imu_accel_covVec", std::vector<double>(IMU_ACCEL_COV));
 
     // get parameters
     if_debug_ = this->get_parameter("debug").as_bool();
@@ -53,12 +50,9 @@ public:
     mag_offset_x_ = this->get_parameter("mag_offset_x").as_double();
     mag_offset_y_ = this->get_parameter("mag_offset_y").as_double();
     mag_offset_z_ = this->get_parameter("mag_offset_z").as_double();
-    this->get_parameter("imu_mag_covVec", imu_mag_cov_param);
-    imu_mag_cov = imu_mag_cov_param.as_double_array();
-    this->get_parameter("imu_gyro_covVec", imu_gyro_cov_param);
-    imu_gyro_cov = imu_gyro_cov_param.as_double_array();
-    this->get_parameter("imu_accel_covVec", imu_accel_cov_param);
-    imu_accel_cov = imu_accel_cov_param.as_double_array();
+    this->get_parameter("imu_mag_covVec").as_double_array();
+    this->get_parameter("imu_gyro_covVec").as_double_array();
+    this->get_parameter("imu_accel_covVec").as_double_array();
 
     q_rot.setRPY(0, 0, yaw_offset_);
 
